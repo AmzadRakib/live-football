@@ -165,10 +165,6 @@
 }
 
 .main-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
     display: none;
 }
 
@@ -192,7 +188,10 @@ footer {
 .footer-about {
     border-top: 1px solid gray;
     padding-top: 50px;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    align-items: center;
     gap: 30px;
 
 }
@@ -257,6 +256,10 @@ footer {
 /* Tablet View  */
 
 @media only screen and (max-width:992px) {
+    .container {
+        margin-bottom: 40px;
+    }
+
     .header-container {
         height: 55vh;
         display: flex;
@@ -282,7 +285,71 @@ footer {
         width: 440px;
     }
 
+    .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
 
+    .blog-nav {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        width: 650px;
+        height: 100%;
+    }
+
+    .blog-btn {
+        margin-bottom: 30px;
+        border: 1px solid lightgray;
+    }
+
+    .blogs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .blog-tablet {
+        display: none;
+    }
+
+    .main-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    .main-footer button {
+        padding: 10px 25px;
+        background-color: #DD0000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    footer {
+        height: 345px;
+    }
+
+    .footer-about {
+        width: 90%;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-tabview {
+        grid-column: 2/3;
+    }
+
+    .footer-tabview2 {
+        grid-column: 3/4;
+    }
 }
 
 /* Mobile View  */
@@ -330,5 +397,45 @@ footer {
     .header-image img {
         margin-left: -150px;
         width: 520px;
+    }
+
+    .blog-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 210px;
+    }
+
+    .blog-btn {
+        margin-bottom: 10px;
+    }
+
+    .blogs {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .main-footer {
+        display: none;
+    }
+
+    footer {
+        height: 100%;
+    }
+
+    .footer-container {
+        height: 580px;
+    }
+
+    .footer-about {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 25px;
+    }
+
+    .footer-about>p {
+        grid-column: 1;
     }
 }
